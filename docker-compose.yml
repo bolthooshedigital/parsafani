@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  parsafani-web:
+    build: .
+    container_name: parsafani-app
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8085:80"
+    networks:
+      - parsafani-net
+
+networks:
+  parsafani-net:
+    driver: bridge
